@@ -1,0 +1,15 @@
+includes:
+    - vendor/larastan/larastan/extension.neon
+
+parameters:
+
+    paths:
+        - app/
+
+    # Level 5 is a good balance for Laravel apps to find actual bugs/security issues
+    level: 5
+
+    ignoreErrors:
+
+    excludePaths:
+        - ./vendor/*

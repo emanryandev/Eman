@@ -1,0 +1,9 @@
+BEGIN:VCARD
+VERSION:3.0
+FN:Eman (Cloud Engineer)
+TITLE:Senior Cloud & DevOps Engineer
+EMAIL:eman@example.com
+TEL:+1234567890
+URL:https://linkedin.com/in/eman-cloud
+NOTE:Cloud Infrastructure, CI/CD, and DevOps Specialist.
+END:VCARD

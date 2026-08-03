@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cloud Engineer Portfolio</title>
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="/assets/css/terminal-mode.css">
+    <!-- FontAwesome for Real Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="dark-theme">
+
+    <!-- 🎵 Cyberpunk Audio -->
+    <audio id="bg-audio" loop src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_1082fc607b.mp3?filename=cyberpunk-2099-10701.mp3"></audio>
+
+    <!-- 📰 News Ticker -->
+    <div class="news-ticker">
+        <div class="ticker-content">
+            🚀 <strong>Latest Update:</strong> Achieved AWS Certified Solutions Architect - Professional! | 🛡️ Implemented Zero-Trust Security for major FinTech client. | ☁️ Open for new freelance DevOps projects!
+        </div>
+    </div>
+
+    <!-- 💬 Floating Socials & Live Chat -->
+    <div class="floating-socials">
+        <a href="https://wa.me/1234567890" target="_blank" class="float-icon whatsapp" title="Chat on WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+        <a href="#" class="float-icon email" onclick="document.querySelector('[data-target=\'section-contact\']').click()" title="Send Email"><i class="fa-solid fa-envelope"></i></a>
+    </div>
+
+    <!-- 💻 Mini Terminal -->
+    <div class="mini-terminal-live" id="mini-terminal-live">
+        <div class="mt-header">root@system:~</div>
+        <div class="mt-body" id="mt-body"></div>
+    </div>
+
+    <!-- Modern Micro-Interactions -->
+    <div id="scroll-progress" class="scroll-progress"></div>
+    <div id="cursor-glow" class="cursor-glow"></div>
+
+    <!-- FAQ Reading Progress -->
+    <div id="faq-progress"></div>
+
+    <!-- Top Navigation -->
+    <header class="app-header">
+        <div class="logo">user@cloud-env:~$</div>
+        <nav class="main-nav">
+            <button class="nav-btn active" data-target="section-home"><span class="i18n" data-en="Home" data-ar="الرئيسية">Home</span></button>
+            <button class="nav-btn" data-target="section-about"><span class="i18n" data-en="About Me" data-ar="عن المهندسة">About Me</span></button>
+            <button class="nav-btn" data-target="section-services"><span class="i18n" data-en="Services" data-ar="الخدمات">Services</span></button>
+            <button class="nav-btn" data-target="section-projects"><span class="i18n" data-en="Projects" data-ar="المشاريع">Projects</span></button>
+            <button class="nav-btn" data-target="section-contact"><span class="i18n" data-en="Contact" data-ar="اتصل بنا">Contact</span></button>
+        </nav>
+        <div class="nav-actions">
+            <button id="btn-lang-toggle" style="background: transparent; color: var(--accent-color); border: 1px solid var(--accent-color); padding: 5px 10px; border-radius: 4px; cursor: pointer; font-family: inherit;">العربية</button>
+            <button id="btn-audio-toggle" style="background: transparent; color: #d946ef; border: 1px solid #d946ef; padding: 5px 10px; border-radius: 4px; cursor: pointer;"><i class="fa-solid fa-volume-xmark"></i></button>
+                        <button id="btn-download-cv" class="pulse-btn" onclick="window.location.href='/cv/download/69b85335dfddadc28b0c80e4'"><span class="i18n" data-en="Download CV" data-ar="تحميل السيرة الذاتية">Download CV</span></button>
+            <button id="btn-toggle-terminal"><span class="i18n" data-en="_CLI Mode" data-ar="_واجهة الأوامر">_CLI Mode</span></button>
+        </div>
+    </header>
+
+    <!-- Standard UI View -->
+    <main id="view-standard" class="view-active">
+        
+        <!-- Home Section -->
+        <section id="section-home" class="page-section active">
+            <div id="particles-js"></div>
+            <!-- 3D Server Element -->
+            <div id="three-container" style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; z-index: 0; pointer-events: none; opacity: 0.6;"></div>
+            <div class="hero">
+                <h2 id="smart-greeting" class="reveal-up i18n" style="color: var(--accent-color); font-size: 1.5em; margin-bottom: 10px;"></h2>
+                <h1 class="reveal-up glitch-text"><span id="typewriter-text" data-en="Architecting Scalable Cloud Infrastructure" data-ar="بناء بنية تحتية سحابية قابلة للتوسع"></span><span class="typing-cursor"></span></h1>
+                <p class="i18n reveal-up delay-100" data-en="Welcome to my portfolio. Deployments, pipelines, and distributed systems." data-ar="مرحباً بك في محفظة أعمالي. نشر، خطوط أنابيب، وأنظمة موزعة.">Welcome to my portfolio. Deployments, pipelines, and distributed systems.</p>
+            </div>
+            
+            <!-- Counters -->
+            <div class="stats-row reveal-up delay-200">
+                <div class="stat-item"><span class="counter" data-target="5">0</span><span class="i18n" data-en="Years Experience" data-ar="سنوات خبرة">Years Experience</span></div>
+                <div class="stat-item"><span class="counter" data-target="20">0</span><span class="i18n" data-en="Projects Deployed" data-ar="مشاريع منجزة">Projects Deployed</span></div>
+                <div class="stat-item"><span class="counter" data-target="99">0</span><span class="i18n" data-en="% Uptime" data-ar="% وقت تشغيل">% Uptime</span></div>
+            </div>
+            
+            <!-- Trust Badges -->
+            <div class="trust-badges reveal-up delay-300">
+                <i class="fa-brands fa-aws"></i> <i class="fa-brands fa-docker"></i> <i class="fa-brands fa-linux"></i> <i class="fa-brands fa-google"></i>
+            </div>
+
+            <div class="scroll-indicator" onclick="document.querySelector('[data-target=\'section-about\']').click()"><i class="fa-solid fa-chevron-down"></i></div>
+        </section>
+
+        <!-- About Section -->
+        <section id="section-about" class="page-section">
+            <div class="source-code-bg">resource "aws_instance" "web" { ami = "ami-0c55b159cbfafe1f0" instance_type = "t2.micro" tags = { Name = "Eman_Server" } }</div>
+            <div class="about-container reveal-zoom">
+                <div class="reveal-left delay-100" style="flex: 1; min-width: 250px;">
+                    <!-- Scratch Reveal Profile -->
+                    <div class="scratch-reveal-container"><img src="/assets/images/profile.png" onerror="this.src='https://via.placeholder.com/250';" alt="Eman Profile" class="profile-pic scratch-pic"></div>
+                    
+                    <!-- Skill Progress -->
+                    <h3 class="i18n" data-en="Core Technologies" data-ar="التقنيات الأساسية">Core Technologies</h3>
+                    <div class="skill-item"><div class="skill-header"><span><i class="fa-brands fa-aws" style="color: #ff9900; width: 20px;"></i> AWS / GCP</span><span>90%</span></div><div class="skill-bar"><div class="skill-fill" data-width="90%"></div></div></div>
+                    <div class="skill-item"><div class="skill-header"><span><i class="fa-brands fa-docker" style="color: #2496ed; width: 20px;"></i> Kubernetes / Docker</span><span>85%</span></div><div class="skill-bar"><div class="skill-fill" data-width="85%"></div></div></div>
+                    <div class="skill-item"><div class="skill-header"><span><i class="fa-solid fa-cubes" style="color: #844FBA; width: 20px;"></i> Terraform / IaC</span><span>80%</span></div><div class="skill-bar"><div class="skill-fill" data-width="80%"></div></div></div>
+                    <div class="skill-item"><div class="skill-header"><span><i class="fa-brands fa-gitlab" style="color: #fc6d26; width: 20px;"></i> CI/CD Pipelines</span><span>95%</span></div><div class="skill-bar"><div class="skill-fill" data-width="95%"></div></div></div>
+                </div>
+
+                <div class="profile-info reveal-right delay-200">
+                    <h2>Eman <span class="availability-dot" title="Available for work"></span> <button onclick="new Audio('https://dictaudio.playphrase.me/eman.mp3').play()" style="background:none;border:none;color:#10b981;cursor:pointer;"><i class="fa-solid fa-volume-high"></i></button></h2>
+                    <div class="currently-learning" style="margin-bottom: 15px; font-size: 0.9em;">
+                        <span class="i18n" data-en="Currently Learning:" data-ar="أتعلم حالياً:">Currently Learning:</span>
+                        <span class="tech-badge" style="display: inline-flex; margin-left: 10px; background: rgba(217, 70, 239, 0.1); border-color: #d946ef; color: #d946ef;"><i class="fa-brands fa-rust"></i> Rust 🦀</span>
+                    </div>
+                    <p class="title i18n" data-en="Senior Cloud & DevOps Engineer" data-ar="مهندسة سحابية و DevOps">Senior Cloud & DevOps Engineer</p>
+                    <p class="i18n" data-en="Cloud Engineer specializing in designing secure, scalable, and highly available environments. Strong experience in CI/CD automation and Infrastructure as Code (IaC) using modern tools." data-ar="مهندسة سحابية متخصصة في تصميم وبناء بيئات عمل آمنة، قابلة للتوسع، وعالية التوافر (Highly Available). لدي خبرة قوية في أتمتة العمليات (CI/CD) وإدارة البنية التحتية كأكواد (IaC) باستخدام أحدث الأدوات.">Cloud Engineer specializing in designing secure, scalable, and highly available environments. Strong experience in CI/CD automation and Infrastructure as Code (IaC) using modern tools.</p>
+                    
+                    <ul class="contact-list">
+                        <li class="copy-item" data-clipboard="eman@example.com"><i class="fa-solid fa-envelope" style="color: var(--accent-color); width: 25px;"></i> <strong class="i18n" data-en="Email:" data-ar="البريد:">Email:</strong> eman@example.com <i class="fa-regular fa-copy copy-icon"></i></li>
+                        <li class="copy-item" data-clipboard="linkedin.com/in/eman-cloud"><i class="fa-brands fa-linkedin" style="color: var(--accent-color); width: 25px;"></i> <strong class="i18n" data-en="LinkedIn:" data-ar="لينكد إن:">LinkedIn:</strong> linkedin.com/in/eman-cloud <i class="fa-regular fa-copy copy-icon"></i></li>
+                        <li><i class="fa-brands fa-github" style="color: var(--accent-color); width: 25px;"></i> <strong class="i18n" data-en="GitHub:" data-ar="جيت هاب:">GitHub:</strong> github.com/eman-devops</li>
+                        <li><i class="fa-solid fa-location-dot" style="color: var(--accent-color); width: 25px;"></i> <strong class="i18n" data-en="Location:" data-ar="الموقع:">Location:</strong> Remote</li>
+                    </ul>
+
+                    <button class="btn-primary i18n" data-en="Download VCard" data-ar="حفظ جهة الاتصال" onclick="downloadVCard()" style="font-size:0.9em; padding:8px 15px; margin-bottom: 20px;"><i class="fa-solid fa-address-card"></i> Download VCard</button>
+
+                    <!-- Live GitHub Stats -->
+                    <div class="live-github-stats">
+                        <span class="i18n" data-en="Live GitHub Commits:" data-ar="مساهمات جيت هاب الحية:">Live GitHub Commits:</span> <strong id="gh-commits-count" style="color: var(--accent-color);">Loading...</strong>
+                    </div>
+
+                    <!-- Radar Chart -->
+                    <h3 class="i18n" data-en="Skills Radar" data-ar="مخطط المهارات" style="margin-top: 30px;">Skills Radar</h3>
+                    <div class="radar-chart-container" style="max-width: 350px; margin: 20px auto;">
+                        <canvas id="skillsRadarChart"></canvas>
+                    </div>
+
+                    <!-- Horizontal Timeline -->
+                    <h3 class="i18n" data-en="Experience Journey" data-ar="مسار الخبرات" style="margin-top: 30px;">Experience Journey</h3>
+                    <div class="horizontal-timeline">
+                        <div class="timeline-item reveal-up">
+                            <span class="timeline-date">2021 - Present</span>
+                            <strong class="i18n" data-en="Senior Cloud Engineer" data-ar="مهندس سحابي أول">Senior Cloud Engineer</strong>
+                        </div>
+                        <div class="timeline-item reveal-up delay-100">
+                            <span class="timeline-date">2019 - 2021</span>
+                            <strong class="i18n" data-en="DevOps Engineer" data-ar="مهندس DevOps">DevOps Engineer</strong>
+                        </div>
+                    </div>
+
+                    <!-- Hobbies -->
+                    <h3 class="i18n" data-en="Hobbies" data-ar="الاهتمامات" style="margin-top: 30px;">Hobbies</h3>
+                    <div class="hobbies-icons">
+                        <span title="Gaming"><i class="fa-solid fa-gamepad"></i></span>
+                        <span title="Coffee"><i class="fa-solid fa-mug-hot"></i></span>
+                        <span title="Reading"><i class="fa-solid fa-book"></i></span>
+                    </div>
+
+                    <!-- Testimonials Slider -->
+                    <div class="testimonials-slider" style="margin-top: 30px;">
+                        <p>"Eman transformed our legacy systems into a robust AWS architecture seamlessly!" - <em>CTO, FinTech</em></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="section-services" class="page-section">
+            <h2 class="section-title i18n reveal-down" data-en="Cloud Services" data-ar="الخدمات السحابية">Cloud Services</h2>
+            
+            <!-- Process Path -->
+            <div class="process-path reveal-up">
+                <div class="step">1. Analyze</div><div class="step">2. Architect</div><div class="step">3. Automate</div><div class="step">4. Monitor</div>
+            </div>
+
+            <div class="services-grid">
+                <div class="service-card reveal-up delay-100">
+                    <span class="floating-icon"><i class="fa-solid fa-cloud" style="color: var(--accent-color);"></i></span>
+                    <h3 class="i18n" data-en="Cloud Architecture" data-ar="البنية التحتية السحابية">Cloud Architecture</h3>
+                    <p class="i18n" data-en="Designing scalable integrated cloud architecture (AWS/GCP/Azure) to handle high traffic with optimal performance and lowest cost." data-ar="تصميم بنية تحتية سحابية متكاملة وقابلة للتوسع (AWS/GCP/Azure) تتحمل الضغط العالي مع ضمان أفضل أداء بأقل تكلفة.">Designing scalable integrated cloud architecture (AWS/GCP/Azure) to handle high traffic with optimal performance and lowest cost.</p>
+                    <div class="service-tech-stack"><i class="fa-brands fa-aws"></i> <i class="fa-brands fa-google"></i></div>
+                    <button class="btn-service-cta i18n" data-en="Request Service" data-ar="طلب الخدمة" onclick="document.querySelector('.nav-btn[data-target=\'section-contact\']').click(); document.getElementById('contact-subject').value='Cloud Architecture';">Request Service</button>
+                    <button class="btn-service-video" onclick="document.getElementById('video-modal').style.display='flex'"><i class="fa-solid fa-play"></i></button>
+                </div>
+                <div class="service-card reveal-up delay-200">
+                    <span class="floating-icon" style="animation-delay: 1s;"><i class="fa-solid fa-rocket" style="color: var(--accent-color);"></i></span>
+                    <h3 class="i18n" data-en="CI/CD Automation" data-ar="أتمتة CI/CD">CI/CD Automation</h3>
+                    <p class="i18n" data-en="Automating full software development lifecycle (Pipelines) using Jenkins, GitHub Actions, and GitLab to accelerate deployments." data-ar="أتمتة دورة حياة تطوير البرمجيات بالكامل (Pipelines) باستخدام Jenkins و GitHub Actions و GitLab لتسريع عمليات النشر.">Automating full software development lifecycle (Pipelines) using Jenkins, GitHub Actions, and GitLab to accelerate deployments.</p>
+                    <button class="btn-service-cta i18n" data-en="Request Service" data-ar="طلب الخدمة" onclick="document.querySelector('.nav-btn[data-target=\'section-contact\']').click(); document.getElementById('contact-subject').value='CI/CD Automation';">Request Service</button>
+                </div>
+                <div class="service-card reveal-up delay-300">
+                    <span class="floating-icon" style="animation-delay: 2s;"><i class="fa-solid fa-shield-halved" style="color: var(--accent-color);"></i></span>
+                    <h3 class="i18n" data-en="DevSecOps & Security" data-ar="الحماية والأمان">DevSecOps & Security</h3>
+                    <p class="i18n" data-en="Securing cloud environments and implementing advanced security policies (Zero-Trust) to protect sensitive data from breaches." data-ar="تأمين البيئات السحابية وتطبيق سياسات الأمان والحماية المتقدمة (Zero-Trust) لحماية البيانات الحساسة من الاختراق.">Securing cloud environments and implementing advanced security policies (Zero-Trust) to protect sensitive data from breaches.</p>
+                    <button class="btn-service-cta i18n" data-en="Request Service" data-ar="طلب الخدمة" onclick="document.querySelector('.nav-btn[data-target=\'section-contact\']').click(); document.getElementById('contact-subject').value='General Inquiry';">Request Service</button>
+                </div>
+            </div>
+            
+            <!-- Interactive Architecture & Brochure Download -->
+            <div style="margin-top: 50px; text-align: center;" class="reveal-up">
+                <h3 class="i18n" data-en="Interactive Cloud Architecture" data-ar="بنية سحابية تفاعلية">Interactive Cloud Architecture</h3>
+                <div class="interactive-architecture" style="position: relative; display: inline-block; max-width: 100%; border: 1px solid var(--border-color); border-radius: 8px; overflow: hidden;">
+                    <!-- صورة وهمية لبنية سحابية (استبدلها بصورتك الحقيقية) -->
+                    <img src="https://via.placeholder.com/800x400/1e293b/10b981?text=Cloud+Architecture+Diagram" alt="Architecture" style="display: block; width: 100%;">
+                    <!-- Hotspots -->
+                    <div class="hotspot" style="top: 30%; left: 20%;" title="Load Balancer: يوزع الضغط على السيرفرات"><i class="fa-solid fa-network-wired"></i></div>
+                    <div class="hotspot" style="top: 50%; left: 50%;" title="Auto Scaling Group: السيرفرات الأساسية"><i class="fa-solid fa-server"></i></div>
+                    <div class="hotspot" style="top: 70%; left: 80%;" title="RDS Database: قاعدة بيانات مشفرة"><i class="fa-solid fa-database"></i></div>
+                </div>
+                
+                <div style="margin-top: 30px;">
+                    <a href="#" download="Eman_Cloud_Services.pdf" class="btn-primary i18n" data-en="📄 Download B2B Brochure" data-ar="📄 تحميل الملف التعريفي للشركات" style="text-decoration: none; padding: 12px 25px;">📄 Download B2B Brochure</a>
+                </div>
+            </div>
+
+            <!-- Before & After Slider & ROI Calc -->
+            <div style="display: flex; gap: 20px; flex-wrap: wrap; justify-content: center; margin-top: 50px;">
+                <div class="roi-calculator stat-card">
+                    <h3 class="i18n" data-en="ROI Calculator" data-ar="حاسبة التوفير">ROI Calculator</h3>
+                    <input type="number" id="roi-input" placeholder="Current Monthly Infra Cost ($)" style="width:100%; padding:10px; margin-bottom:10px; border-radius:4px;">
+                    <button onclick="calculateROI()" class="btn-primary" style="width:100%">Calculate Savings</button>
+                    <p id="roi-result" style="margin-top:15px; color:var(--accent-color); font-weight:bold;"></p>
+                </div>
+                <div class="before-after-container">
+                    <div class="ba-layer after-layer"><div class="ba-label">Cloud (Automated)</div></div>
+                    <div class="ba-layer before-layer"><div class="ba-label">Legacy (Manual)</div></div>
+                    <input type="range" min="0" max="100" value="50" class="ba-slider" id="ba-slider">
+                </div>
+            </div>
+
+            <!-- Pricing Tiers -->
+            <div class="pricing-tiers">
+                <div class="tier"><h4>Basic</h4><p>$500</p><ul><li>Architecture Review</li><li>Basic CI/CD</li></ul></div>
+                <div class="tier featured"><h4>Pro</h4><p>$1500</p><ul><li>Full Migration</li><li>Advanced Security</li><li>24/7 Support</li></ul></div>
+                <div class="tier"><h4>Enterprise</h4><p>Custom</p><ul><li>Multi-Cloud</li><li>K8s Cluster</li></ul></div>
+            </div>
+
+            <!-- FAQ -->
+            <div class="faq-container reveal-up delay-400">
+                <h3 style="text-align: center; margin-bottom: 20px;" class="i18n" data-en="Frequently Asked Questions" data-ar="الأسئلة الشائعة">Frequently Asked Questions</h3>
+                <div class="faq-item">
+                    <div class="faq-question"><span class="i18n" data-en="Do you work with startups?" data-ar="هل تعملين مع الشركات الناشئة؟">Do you work with startups?</span> <span style="color: var(--accent-color);">+</span></div>
+                    <div class="faq-answer i18n" data-en="Yes, I build infrastructure from scratch ensuring it's cost-effective and ready to scale as your startup grows." data-ar="نعم، أقوم ببناء البنية التحتية من الصفر لضمان فعاليتها من حيث التكلفة وقابليتها للتوسع مع نمو شركتك.">Yes, I build infrastructure from scratch ensuring it's cost-effective and ready to scale as your startup grows.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question"><span class="i18n" data-en="Which Cloud Provider is the best?" data-ar="ما هو أفضل مزود سحابي؟">Which Cloud Provider is the best?</span> <span style="color: var(--accent-color);">+</span></div>
+                    <div class="faq-answer i18n" data-en="It depends on your business needs. AWS offers immense services, GCP is great for data, and Azure integrates well with MS ecosystems." data-ar="يعتمد ذلك على احتياجات عملك. AWS تقدم خدمات ضخمة، GCP ممتاز للبيانات، و Azure يتكامل جيدًا مع أنظمة مايكروسوفت.">It depends on your business needs. AWS offers immense services, GCP is great for data, and Azure integrates well with MS ecosystems.</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="section-projects" class="page-section">
+            <h2 class="section-title i18n reveal-down" data-en="Latest Projects" data-ar="أحدث المشاريع">Latest Projects</h2>
+            
+            <div class="project-controls reveal-up" style="display: flex; gap: 15px; margin-bottom: 30px; justify-content: center; flex-wrap: wrap;">
+                <input type="text" id="project-search" class="i18n-placeholder" data-en="Search projects..." data-ar="ابحث عن مشروع..." placeholder="Search projects..." style="flex: 1; max-width: 300px;">
+                <select id="project-filter" style="flex: 1; max-width: 200px;">
+                    <option value="all" class="i18n" data-en="All Categories" data-ar="جميع الفئات">All Categories</option>
+                    <option value="aws">AWS</option>
+                    <option value="k8s">Kubernetes</option>
+                    <option value="cicd">CI/CD</option>
+                    <option value="security">Security</option>
+                </select>
+            </div>
+
+            <div id="project-grid" class="grid-container">
+                <!-- Projects will be injected here via JavaScript -->
+            </div>
+
+            <!-- GitHub Graph -->
+            <div class="github-graph reveal-up">
+                <h3 style="margin-top: 0;" class="i18n" data-en="GitHub Contributions" data-ar="مساهمات جيت هاب">GitHub Contributions</h3>
+                <img src="https://ghchart.profile.thalestensa.com/10b981/eman-devops" alt="Eman GitHub Contributions">
+            </div>
+
+            <!-- Single Project Modal & Code Snippet Modal (Hidden) -->
+            <div id="code-snippet-modal" class="modal">
+                <div class="modal-content" style="background: #1e1e1e; max-width: 800px;">
+                    <span class="close-modal" onclick="document.getElementById('code-snippet-modal').style.display='none'">&times;</span>
+                    <h3 style="color: #58a6ff;">main.tf</h3>
+                    <pre><code style="color: #d4d4d4;">module "eks" { source = "terraform-aws-modules/eks/aws" cluster_name = "production-cluster" }</code></pre>
+                </div>
+            </div>
+
+            <!-- Video Explainer Modal (Hidden) -->
+            <div id="video-modal" class="modal">
+                <div class="modal-content" style="background: var(--card-bg); max-width: 600px; text-align: center;">
+                    <span class="close-modal" onclick="document.getElementById('video-modal').style.display='none'">&times;</span>
+                    <h3 class="i18n" data-en="Service Explainer" data-ar="شرح الخدمة">Service Explainer</h3>
+                    <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 8px;">
+                        <iframe style="position: absolute; top:0; left: 0; width: 100%; height: 100%;" src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="section-contact" class="page-section">
+            <h2 class="section-title i18n reveal-down" data-en="Contact Me" data-ar="تواصل معي">Contact Me</h2>
+            <div class="contact-layout">
+                <div class="contact-form-container reveal-left delay-100">
+                    
+                    <!-- Voice Record -->
+                    <div style="margin-bottom: 20px; background: rgba(255,255,255,0.05); padding: 15px; border-radius: 8px;">
+                        <p style="margin:0 0 10px 0;" class="i18n" data-en="Prefer talking? Send a Voice Message!" data-ar="تفضل التحدث؟ أرسل رسالة صوتية!">Prefer talking? Send a Voice Message!</p>
+                        <button id="btn-record-voice" type="button" class="btn-primary" style="background:#ef4444; width:100%;"><i class="fa-solid fa-microphone"></i> Record</button>
+                        <audio id="voice-preview" controls style="display:none; width:100%; margin-top:10px;"></audio>
+                    </div>
+
+                    <h3 style="margin-top: 0;" class="i18n" data-en="Send a Message" data-ar="أرسل رسالة">Send a Message</h3>
+                    <form id="contact-form" class="contact-form">
+                        <input type="text" id="contact-name" class="i18n-placeholder" data-en="Name" data-ar="الاسم" placeholder="Name" required>
+                        <input type="email" id="contact-email" class="i18n-placeholder" data-en="Email" data-ar="البريد الإلكتروني" placeholder="Email" required>
+                        
+                        <select id="contact-subject" required>
+                            <option value="" disabled selected class="i18n" data-en="Select Subject" data-ar="اختر الموضوع">Select Subject</option>
+                            <option value="General Inquiry" class="i18n" data-en="General Inquiry" data-ar="استفسار عام">General Inquiry</option>
+                            <option value="New Project" class="i18n" data-en="New Project" data-ar="مشروع جديد">New Project</option>
+                            <option value="Cloud Architecture">Cloud Architecture</option>
+                            <option value="CI/CD Automation">CI/CD Automation</option>
+                        </select>
+                        
+                        <div id="budget-container" style="display: none; width: 100%;">
+                            <input type="text" id="contact-budget" class="i18n-placeholder" data-en="Estimated Budget ($)" data-ar="الميزانية المقدرة ($)" placeholder="Estimated Budget ($)" style="margin-bottom: 0;">
+                        </div>
+
+                        <textarea id="contact-message" rows="5" class="i18n-placeholder" data-en="Your Message" data-ar="رسالتك" placeholder="Your Message" required></textarea>
+                        <button type="submit" id="btn-submit-contact" class="btn-primary i18n" data-en="Send Message" data-ar="إرسال الرسالة">Send Message</button>
+                    </form>
+                    
+                    <!-- Newsletter -->
+                    <div class="newsletter-box">
+                        <h4 class="i18n" data-en="Subscribe to DevOps Tips" data-ar="اشترك بنشرة DevOps">Subscribe to DevOps Tips</h4>
+                        <input type="email" placeholder="Your Email" style="width:70%; padding:10px; border-radius:4px; border:none; outline:none;">
+                        <button class="btn-primary" style="padding:10px; border-radius:4px; font-size:0.9em;">Join</button>
+                    </div>
+                </div>
+                <div class="calendly-container reveal-right delay-200">
+                    <!-- Interactive Map (Dark Mode Mapbox/OSM fallback) -->
+                    <div style="height: 200px; margin-bottom: 20px; border-radius: 8px; overflow: hidden;">
+                        <iframe width="100%" height="100%" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.openstreetmap.org/export/embed.html?bbox=-0.14%2C51.5%2C-0.12%2C51.52&amp;layer=mapnik" style="filter: invert(100%) hue-rotate(180deg) brightness(95%) contrast(85%);"></iframe>
+                    </div>
+                    <!-- Calendly inline widget -->
+                    <div class="calendly-inline-widget" data-url="https://calendly.com/eman-devops" style="min-width:320px;height:500px;"></div>
+                    <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Terminal/CLI Overlay View -->
+    <div id="view-terminal" class="view-hidden">
+        <div class="terminal-window">
+            <div class="terminal-header">
+                <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+                bash - root@cloud-portfolio:~
+            </div>
+            <div class="terminal-body" id="terminal-output">
+                <div>Type <span class="cmd-highlight">help</span> to see available commands.</div>
+            </div>
+            <div class="terminal-input-line">
+                <span class="prompt" dir="ltr">visitor@cloud:~$</span>
+                <input type="text" id="terminal-input" autocomplete="off" spellcheck="false" dir="ltr">
+            </div>
+        </div>
+    </div>
+    
+    <!-- Infrastructure Health Widget -->
+    <div id="infra-widget" class="widget-container">
+        <div class="widget-header i18n" data-en="System Status" data-ar="حالة النظام">System Status</div>
+        <div class="widget-body">
+            <div class="metric">
+                <span class="i18n" data-en="API Latency:" data-ar="استجابة الخادم:">API Latency:</span> <span id="metric-latency" class="value ok" dir="ltr">12ms</span>
+            </div>
+            <div class="metric">
+                <span class="i18n" data-en="Uptime:" data-ar="وقت التشغيل:">Uptime:</span> <span id="metric-uptime" class="value" dir="ltr">99.99%</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.0/vanilla-tilt.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+    <script src="/assets/js/main.js"></script>
+    <script src="/assets/js/terminal-ui.js"></script>
+    <script src="/assets/js/mock-server.js"></script>
+</body>
+</html>
